@@ -33,13 +33,19 @@
       color: white;
     }
 
+    .texto-valor-carro {
+      font-weight: bold;
+      color: #333;
+      font-family: serif;
+    }
+
   </style>
 </head>
 <body>
   <p>Veja as ofertas abaixo:</p>
   <ul>
     <li>
-      Carro X: R$ 100.000,00
+      Carro X: <span class="texto-valor-carro"> R$ 100.000,00</span>
       <button
         class="botao-comprar"
         onmouseenter="onMouseEnterBtnComprar(event)"
@@ -50,7 +56,7 @@
       </button>
     </li>
     <li>
-      Carry Y: R$ 50.000,00
+      Carro Y: <span class="texto-valor-carro"> R$ 50.000,00</span>
       <button
         class="botao-comprar"
         onmouseenter="onMouseEnterBtnComprar(event)"
@@ -61,6 +67,10 @@
       </button>
     </li>
   </ul>
+
+  <footer>
+    Feito no ano de: <span id="text-ano-atual"></span>
+  </footer>
   <script>
 
     function onMouseEnterBtnComprar(event) {
@@ -77,6 +87,7 @@
       }
     }
 
+    document.getElementById("texto-ano-atual").innerHTML = new Date().getFullYear();
   </script>
 </body>
 </html>
