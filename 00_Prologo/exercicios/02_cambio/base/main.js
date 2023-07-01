@@ -12,14 +12,15 @@ function onClickBtnComprar(carro) {
   }
 }
 
-function buscarCep() {
-  const cep = document.getElementById('cep').value;
-  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+function buscarCurrency() {
+  const currency = document.getElementById('currency').value;
+  fetch(`https://open.er-api.com/v6/latest/${currency}`)
     .then(function (resp) {
       return resp.json();
     })
     .then(function (dados) {
-      document.getElementById('resultado').innerText = dados['logradouro'];
+      console.log(dados)
+      document.getElementById('resultado').innerText = dados['rates'].BRL;
     })
     .catch(function (err) {
       console.error(err);
